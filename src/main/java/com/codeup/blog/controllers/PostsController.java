@@ -19,8 +19,8 @@ public class PostsController {
 
     @ResponseBody
     @GetMapping("/posts/{id}")
-    public String individualPost(@PathVariable String id) {
-        return id + " post!";
+    public String viewIndividualPost(@PathVariable int id) {
+        return "Post Id " + id + ": Post!";
     }
 
     @ResponseBody
