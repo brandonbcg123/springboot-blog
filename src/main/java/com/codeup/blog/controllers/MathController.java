@@ -16,7 +16,7 @@ public class MathController {
     }
 
     @ResponseBody
-    @GetMapping("/subtract/{numberOne}/and/{numberTwo}")
+    @GetMapping("/subtract/{numberTwo}/from/{numberOne}")
     public Double subtract(@PathVariable Double numberOne, @PathVariable Double numberTwo) {
         return numberOne - numberTwo;
     }
