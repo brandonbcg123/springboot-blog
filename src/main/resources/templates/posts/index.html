@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/fragments/header :: head('View All Posts')"></head>
+<body>
+
+<nav th:replace="/fragments/navbar :: nav-bar"></nav>
+
+<div th:each="post : ${posts}">
+	<h2 th:text="${post.title}"></h2>
+	<h5 th:text="${post.body}"></h5>
+</div>
+
+
+<footer th:replace="/fragments/footer :: main-footer"></footer>
+</body>
+</html>

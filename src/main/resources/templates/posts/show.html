@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/header :: head('Individual Post Page')"></head>
+<body>
+
+<nav th:replace="/fragments/navbar :: nav-bar"></nav>
+
+<h2 th:text="${post.title}"></h2>
+<h5 th:text="${post.body}"></h5>
+
+
+<footer th:replace="/fragments/footer :: main-footer"></footer>
+</body>
+</html>
