@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="UTF-8"/>
-	<title>Title</title>
-</head>
+<head th:replace="/fragments/header :: head"></head>
+
 <body>
+<nav th:replace="/fragments/navbar :: nav-bar"></nav>
 
 <h1>Guess the number the dice will land on!!!</h1>
 
@@ -43,5 +42,6 @@
 <a href="/roll-dice/6"><span>6</span></a>
 </h2>
 
+<footer th:replace="/fragments/footer :: main-footer"></footer>
 </body>
 </html>
