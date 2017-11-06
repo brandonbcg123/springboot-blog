@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -43,12 +44,21 @@ public class PostsController {
     }
 
     @GetMapping("/posts/create")
-        public String viewCreatePostForm() {
-            return "Here is the form to create a post!!!";
-        }
+    public String viewCreatePostForm() {
+        return "posts/create";
+    }
+
 
     @PostMapping("/posts/create")
-    public String createAPost() {
-    return "Create a new Post!";
-    }
+    public String createAPost(
+            @RequestParam(name = "title") String title,
+            @RequestParam(name = "body") String body
+    ) {
+        Post post = new Post();
+        post.setTitle(title);
+        post.setBody(body);
+        postSvc.savePost(post);
+            return "redirect:/posts";
+        }
+
 }
