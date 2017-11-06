@@ -53,4 +53,9 @@ public class PostsController {
         return "redirect:/posts";
     }
 
+    @GetMapping("/posts/{id}/edit")
+    public String editAPost(@PathVariable int id, Model viewModel) {
+        viewModel.addAttribute("post", postSvc.findOnePost(id));
+        return "/posts/edit";
+    }
 }
