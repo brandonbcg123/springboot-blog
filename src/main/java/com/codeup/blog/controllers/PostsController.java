@@ -36,7 +36,7 @@ public class PostsController {
     @GetMapping("/posts/{id}")
     public String viewIndividualPost(@PathVariable int id, Model viewModel) {
 
-        Post post = postSvc.findOnePost((long) id);
+        Post post = postSvc.findOnePost(id);
 
         viewModel.addAttribute("post", post);
         return "posts/show";

@@ -18,7 +18,7 @@ public class PostSvc {
         return posts;
     }
 
-    public Post findOnePost(Long id){
+    public Post findOnePost(long id){
         return posts.get((int) (id - 1));
     }
 
