@@ -5,16 +5,11 @@
 
 <nav th:replace="/fragments/navbar :: nav-bar"></nav>
 
-<form action="/posts/create" method="post" th:object="${post}">
-	Title:
-	<input th:field="*{title}" />
-	<br />
-	Body:
-	<input th:field="*{body}" />
-	<br />
-	<input type="submit" />
-</form>
 
+<form th:include="/fragments/create-edit :: form-partial"
+method="post"
+action="/posts/create"
+th:object="${post}" />
 
 
 
