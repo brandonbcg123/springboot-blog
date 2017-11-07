@@ -24,7 +24,7 @@ public class PostsController {
     @GetMapping("/posts")
     public String viewAllAdds(Model viewModel) {
 
-        List<Post> posts = postSvc.findAllPosts();
+        Iterable <Post> posts = postSvc.findAllPosts();
 
         viewModel.addAttribute("posts", posts);
 

@@ -1,31 +1,33 @@
 package com.codeup.blog.services;
 
 import com.codeup.blog.models.Post;
+import com.codeup.blog.repositories.PostsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service("postSvc")
 public class PostSvc {
-    private List<Post> posts = new ArrayList<>();
+    private final PostsRepository postsDao;
 
-    public PostSvc() {
-        createDummyPosts();
+    @Autowired
+    public PostSvc(PostsRepository postsDao) {
+        this.postsDao = postsDao;
     }
 
-    public List<Post> findAllPosts(){
-        return posts;
+    public Iterable<Post> findAllPosts(){
+        return postsDao.findAll();
     }
 
     public Post findOnePost(long id){
-        return posts.get((int) (id - 1));
+        return postsDao.findOne(id);
     }
 
     public Post savePost(Post post){
-        post.setId((long) (posts.size() + 1));
-        posts.add(post);
-        return post;
+        return postsDao.save(post);
     }
 
 
