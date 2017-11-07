@@ -8,8 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Controller
 
 public class PostsController {
@@ -24,7 +22,7 @@ public class PostsController {
     @GetMapping("/posts")
     public String viewAllAdds(Model viewModel) {
 
-        Iterable <Post> posts = postSvc.findAllPosts();
+        Iterable<Post> posts = postSvc.findAllPosts();
 
         viewModel.addAttribute("posts", posts);
 
@@ -48,14 +46,27 @@ public class PostsController {
 
 
     @PostMapping("/posts/create")
-    public String createAPost(@ModelAttribute Post post) {
+    public String createPost(@ModelAttribute Post post) {
         postSvc.savePost(post);
         return "redirect:/posts";
     }
 
     @GetMapping("/posts/{id}/edit")
-    public String editAPost(@PathVariable int id, Model viewModel) {
+    public String viewEditPostForm(@PathVariable int id, Model viewModel, @ModelAttribute Post post) {
         viewModel.addAttribute("post", postSvc.findOnePost(id));
         return "/posts/edit";
+    }
+
+    @PostMapping("/posts/{id}/edit")
+    public String editPost(@ModelAttribute Post post) {
+        postSvc.savePost(post);
+        return "redirect:/posts";
+    }
+
+    @PostMapping("posts/{id}/delete")
+    public String deletePost(@PathVariable int id) {
+        Post post = postSvc.findOnePost(id);
+        postSvc.deletePost(post);
+        return "redirect:/posts";
     }
 }

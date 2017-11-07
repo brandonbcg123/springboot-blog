@@ -4,11 +4,20 @@
 <body>
 
 <nav th:replace="/fragments/navbar :: nav-bar"></nav>
-
+<div class="post">
 <h2 th:text="${post.title}"></h2>
 <h5 th:text="${post.body}"></h5>
-
-
+</div>
+<div class="btns">
+<form th:action="@{/posts/{id}/edit(id=${post.id})}" method="post" th:object="${post}">
+	<input class="edit" type="submit" value="Edit"/>
+<form th:action="@{/posts/{id}/delete(id=${post.id})}" method="post" th:object="${post}">
+	<input class="delete" type="submit" value="Delete" />
+</form>
+<a th:href="@{/posts/{id}/edit(id=${post.id})}">Edit Your Post</a>
+</form>
+</div>
+	<br />
 <footer th:replace="/fragments/footer :: main-footer"></footer>
 </body>
 </html>
