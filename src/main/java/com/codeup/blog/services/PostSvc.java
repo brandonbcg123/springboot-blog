@@ -35,6 +35,9 @@ public class PostSvc {
         return null;
     }
 
+
+    //createDummyPosts is not being used, but is here for reference when not defining(PostsRepository) an interface that extends CrudRepository
+
     private void createDummyPosts() {
 
         this.savePost(new Post("My Coding Experience", "Learning 8 different languages is tough regardless if they are languages that we speak or languages that we code. Learning code is something beautiful, but it can be frustrating at the same time. Overall there is nothing more gratifying than solving a problem that took hours, days, or even weeks to solve! Once I solve a problem I feel the world is mine!!!"));

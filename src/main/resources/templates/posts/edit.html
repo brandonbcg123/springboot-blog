@@ -5,6 +5,8 @@
 
 <nav th:replace="/fragments/navbar :: nav-bar"></nav>
 
+<h1>Edit Post</h1>
+
 <form class="form" th:include="/fragments/create-edit :: form-partial"
 	  method="post"
 	  th:action="${'/posts/' + post.id + '/edit'}"

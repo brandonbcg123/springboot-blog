@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/fragments/header :: head('')"></head>
+<head th:replace="/fragments/header :: head('Create Post')"></head>
 <body>
 
 <nav th:replace="/fragments/navbar :: nav-bar"></nav>
 
+<h1>Create Post</h1>
 
 <form class="form" th:include="/fragments/create-edit :: form-partial"
 method="post"
