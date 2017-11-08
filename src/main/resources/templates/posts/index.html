@@ -5,15 +5,14 @@
 <body>
 
 <nav th:replace="/fragments/navbar :: nav-bar"></nav>
-
+<h1>Posts</h1>
 <div class="post" th:each="post : ${posts}">
 	<h2 th:text="${post.title}"></h2>
 	<h5 th:text="${post.body}"></h5>
 	<div class="btns">
-		<!--<form th:action="@{/posts/{id}/edit(id=${post.id})}" method="get" th:object="${post}">-->
-			<!--<input class="edit" type="submit" value="Edit"/>-->
+
 			<a th:href="@{/posts/{id}/edit(id=${post.id})}"><button id="editbtn">Edit</button></a>
-		<!--</form>-->
+
 		<form th:action="@{/posts/{id}/delete(id=${post.id})}" method="post">
 			<input class="delete" type="submit" value="Delete"/>
 		</form>
