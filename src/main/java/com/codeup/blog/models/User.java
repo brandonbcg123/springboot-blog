@@ -33,22 +33,6 @@ public class User {
 
     }
 
-    public User(String firstName, String lastName, String username, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
-    public User(Long id, String firstName, String lastName, String username, String email, String password) {
-        this.id= id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
-
     public User(String firstName, String lastName,String username, String email, String password, List<Post> posts) {
         this.firstName = firstName;
         this.lastName = lastName;

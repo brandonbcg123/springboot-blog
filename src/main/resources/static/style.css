@@ -7,8 +7,35 @@ h1 {
     align-items: center;
 }
 
+h2 {
+    margin-top: 2%;
+    margin-bottom: -0.5%;
+}
+
+form {
+    margin-left: 3%;
+}
+
+a.createbtn {
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-primary {
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 2.5%;
+}
+
 #editbtn {
-    color: black;
+    color: #000;
 }
 #btn-holder {
     width: 100%;
@@ -26,7 +53,15 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2%;
 }
+
+/*div.post {*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    /*margin-bottom: 2%;*/
+/*}*/
 
 #footer {
     display: flex;
@@ -36,6 +71,8 @@ h1 {
 
 div.btns {
     display: inline-flex;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 input.delete {
