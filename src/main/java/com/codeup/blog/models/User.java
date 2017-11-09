@@ -17,10 +17,10 @@ public class User {
     @Column(nullable = false)
     private String lastName;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 50, unique = true)
     private String username;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
@@ -30,8 +30,17 @@ public class User {
     private List<Post> posts;
 
     public User() {
-
     }
+
+    public User(User copy) {
+        id = copy.id;
+        firstName = copy.firstName;
+        lastName = copy.lastName;
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
+    }
+
 
     public User(String firstName, String lastName,String username, String email, String password, List<Post> posts) {
         this.firstName = firstName;
@@ -42,15 +51,6 @@ public class User {
         this.posts = posts;
     }
 
-    public User(Long id, String firstName, String lastName, String username, String email, String password, List<Post> posts) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.posts = posts;
-    }
 
     public Long getId() {
         return id;
