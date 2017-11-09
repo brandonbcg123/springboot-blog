@@ -5,21 +5,29 @@
 <body>
 
 <nav th:replace="/fragments/navbar :: nav-bar"></nav>
-<h1>Posts</h1>
-<div class="post" th:each="post : ${posts}">
-	<h2 th:text="${post.title}"></h2>
-	<h5 th:text="${post.body}"></h5>
-	<div class="btns">
 
-			<a th:href="@{/posts/{id}/edit(id=${post.id})}"><button id="editbtn">Edit</button></a>
+<div class="container">
+	<h1>Posts</h1>
 
-		<form th:action="@{/posts/{id}/delete(id=${post.id})}" method="post">
-			<input class="delete" type="submit" value="Delete"/>
-		</form>
+
+	<div class="post" th:each="post : ${posts}">
+		<h2 th:text="${post.title}"></h2>
+		<h5 th:text="${post.body}"></h5>
+		<div class="btns">
+
+			<a th:href="@{/posts/{id}/edit(id=${post.id})}" class="btn btn-info">Edit</a>
+
+			<form th:action="@{/posts/{id}/delete(id=${post.id})}" method="post">
+				<input class="btn btn-danger" type="submit" value="Delete"/>
+			</form>
+		</div>
 	</div>
+
 </div>
 
-<br/>
-<footer th:replace="/fragments/footer :: main-footer"></footer>
+<a th:href="@{/posts/create}" class="btn btn-primary">Create Post</a>
+<div>
+	<footer th:replace="/fragments/footer :: main-footer"></footer>
+</div>
 </body>
 </html>
