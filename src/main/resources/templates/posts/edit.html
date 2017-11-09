@@ -8,8 +8,8 @@
 <h1>Edit Post</h1>
 
 <form class="form" th:include="/fragments/create-edit :: form-partial"
-	  method="post"
-	  th:action="${'/posts/' + post.id + '/edit'}"
+	  th:method="post"
+	  th:action="@{'/posts/' + ${post.id} + '/edit'}"
 	  th:object="${post}" />
 
 <footer th:replace="/fragments/footer :: main-footer"></footer>
