@@ -8,10 +8,10 @@ import org.springframework.util.StringUtils;
 import java.util.Collection;
 import java.util.List;
 
-public class UsersWithRoles extends User implements UserDetails {
+public class UserWithRoles extends User implements UserDetails {
     private List<String> userRoles;
 
-    public UsersWithRoles(User user, List<String> userRoles) {
+    public UserWithRoles(User user, List<String> userRoles) {
         super(user);
         this.userRoles = userRoles;
     }

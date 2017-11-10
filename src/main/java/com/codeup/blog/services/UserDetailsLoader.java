@@ -1,7 +1,7 @@
 package com.codeup.blog.services;
 
 import com.codeup.blog.models.User;
-import com.codeup.blog.models.UsersWithRoles;
+import com.codeup.blog.models.UserWithRoles;
 import com.codeup.blog.repositories.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +15,7 @@ import java.util.Collections;
 public class UserDetailsLoader implements UserDetailsService {
     private final UsersRepository repository;
 
-
+    @Autowired
     public UserDetailsLoader(UsersRepository repository) {
         this.repository = repository;
     }
@@ -28,6 +28,6 @@ public class UserDetailsLoader implements UserDetailsService {
             throw new UsernameNotFoundException("No user found for " + username);
         }
 
-        return new UsersWithRoles(user, Collections.emptyList());
+        return new UserWithRoles(user, Collections.emptyList());
     }
 }
