@@ -10,15 +10,16 @@ import javax.validation.constraints.Size;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(nullable = false, length = 100)
-    @NotBlank(message = "Posts must have a title")
-    @Size(min = 3, message = "The title must be at least 3 character long!!!")
+    @NotBlank(message = "Posts must have a title!")
+    @Size(min = 3, message = "The title must be at least 3 character long!")
     private String title;
 
     @Column(nullable = false)
-    @NotBlank(message = "Posts must have a title")
+    @NotBlank(message = "Posts must have a description!")
+    @Size(min = 10, message = "The description must be at least 10 character long!")
     private String body;
 
 
@@ -35,7 +36,7 @@ public class Post {
         this.body = body;
     }
 
-    public Post(Long id, String title, String body) {
+    public Post(long id, String title, String body) {
         this.id = id;
         this.title = title;
         this.body = body;
@@ -47,7 +48,7 @@ public class Post {
         this.user = user;
     }
 
-    public Post(Long id, String title, String body, User user) {
+    public Post(long id, String title, String body, User user) {
         this.id = id;
         this.title = title;
         this.body = body;
@@ -70,11 +71,11 @@ public class Post {
         this.body = body;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
     public User getUser() {

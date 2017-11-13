@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
 	<title>Title</title>
 </head>
 <body>
 
-<form th:fragment="form-partial">
-	Title:
-	<input th:field="*{title}" />
-	<br/>
-	Body:
-	<input th:field="*{body}" />
-	<br/>
-	<input type="submit"/>
+
+<div class="alert alert-danger" role="alert">
+	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+	<span class="sr-only">Error:</span>
+	Enter a valid email address
+</div>
+<form th:fragment="form-partial" >
+	<label for="title">Title:</label>
+		<input th:field="*{title}" name="title" id="title"/>
+	<div
+		class="alert alert-danger"
+		th:if="${#fields.hasErrors('title')}"
+		th:errors="*{title}" >
+	</div>
+		<br/>
+		<label for="body">Body:</label>
+		<input th:field="*{body}" name="body" id="body"/>
+	<div
+			class="alert alert-danger"
+			th:if="${#fields.hasErrors('body')}"
+			th:errors="*{body}" >
+	</div>
+		<br/>
+		<input type="submit"/>
 </form>
 </body>
 </html>
