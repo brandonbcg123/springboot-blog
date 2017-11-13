@@ -75,8 +75,8 @@ public class PostsController {
         return "redirect:/posts";
     }
 
-    @GetMapping(/"search")
-    public String searchPost(@RequestParam String keyword) {
-
-    }
+//    @GetMapping(/"search")
+//    public String searchPost(@RequestParam String keyword) {
+//
+//    }
 }
