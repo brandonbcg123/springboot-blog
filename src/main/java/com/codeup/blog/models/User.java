@@ -42,7 +42,7 @@ public class User {
     }
 
 
-    public User(String firstName, String lastName,String username, String email, String password, List<Post> posts) {
+    public User(String firstName, String lastName, String email, String username, String password, List<Post> posts) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -72,7 +72,7 @@ public class User {
         return lastName;
     }
 
-    public void setLastName(String LastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 

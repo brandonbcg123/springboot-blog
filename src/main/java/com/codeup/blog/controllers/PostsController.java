@@ -74,4 +74,9 @@ public class PostsController {
         postSvc.deletePost(post);
         return "redirect:/posts";
     }
+
+    @GetMapping(/"search")
+    public String searchPost(@RequestParam String keyword) {
+
+    }
 }

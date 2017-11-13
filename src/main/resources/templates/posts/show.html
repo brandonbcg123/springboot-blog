@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="/fragments/header :: head('Individual Post Page')"></head>
 <body>
 <div>
@@ -21,7 +22,7 @@
 	</div>
 </div>
 
-<a th:href="@{/posts/create}" class="btn btn-primary">Create Post</a>
+<a sec:authorize="isAuthenticated()" th:href="@{/posts/create}" class="btn btn-primary">Create Post</a>
 <div>
 	<footer th:replace="/fragments/footer :: main-footer"></footer>
 </div>
