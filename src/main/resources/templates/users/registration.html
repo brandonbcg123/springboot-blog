@@ -12,23 +12,48 @@
 		<form th:action="@{/register}" th:method="post" th:object="${user}">
 			<div class="form-group">
 				<label for="firstName">First Name</label>
-				<input id="firstName" th:field="*{firstName}" class="form-control"/>
+				<input id="firstName" name="firstName" th:field="*{firstName}" class="form-control"/>
+				<div
+						class="alert alert-danger"
+						th:if="${#fields.hasErrors('firstName')}"
+						th:errors="*{firstName}" >
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="lastName">Last Name</label>
-				<input id="lastName" th:field="*{lastName}" class="form-control"/>
+				<input id="lastName" name="lastName" th:field="*{lastName}" class="form-control"/>
+				<div
+						class="alert alert-danger"
+						th:if="${#fields.hasErrors('lastName')}"
+						th:errors="*{lastName}" >
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="email">Email</label>
-				<input id="email" th:field="*{email}" class="form-control"/>
+				<input id="email" name="email" th:field="*{email}" class="form-control"/>
+				<div
+						class="alert alert-danger"
+						th:if="${#fields.hasErrors('email')}"
+						th:errors="*{email}" >
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="username">Username</label>
-				<input id="username" th:field="*{username}" class="form-control"/>
+				<input id="username" name="username" th:field="*{username}" class="form-control"/>
+				<div
+						class="alert alert-danger"
+						th:if="${#fields.hasErrors('username')}"
+						th:errors="*{username}" >
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="password">Password</label>
-				<input id="password" type="password" th:field="*{password}" class="form-control"/>
+				<input id="password" name="password" type="password" th:field="*{password}" class="form-control"/>
+				<div
+						class="alert alert-danger"
+						th:if="${#fields.hasErrors('password')}"
+						th:errors="*{password}" >
+				</div>
 			</div>
 
 			<input class="btn btn-primary" type="submit" value="Sign me up!!!" />

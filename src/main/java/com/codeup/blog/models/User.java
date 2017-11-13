@@ -1,6 +1,10 @@
 package com.codeup.blog.models;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -9,21 +13,27 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(nullable = false)
+    @NotBlank(message = "First name can not be blank!")
     private String firstName;
 
     @Column(nullable = false)
+    @NotBlank(message = "Last name can not be blank!")
     private String lastName;
 
     @Column(nullable = false, length = 50, unique = true)
+    @NotBlank(message = "Username can not be blank!")
     private String username;
 
     @Column(nullable = false, unique = true)
+    @NotBlank(message = "Email can not be blank!")
+    @Email(message = "Email must have an @ symbol!")
     private String email;
 
     @Column(nullable = false)
+    @NotBlank(message = "Password can not be blank!")
     private String password;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
@@ -52,11 +62,11 @@ public class User {
     }
 
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
