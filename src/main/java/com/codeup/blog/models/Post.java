@@ -17,7 +17,8 @@ public class Post {
 
 
     @ManyToOne
-//    @JoinColumn(name = "user_id"): The default value will result in this name for the foreign key;
+    @JoinColumn (name = "user_id")
+    //The default value will result in this name for the foreign key;
     //Use the annotation @JoinColumn to specify what the foreign key name you want.
     private User user;
 

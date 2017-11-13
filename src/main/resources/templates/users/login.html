@@ -15,17 +15,17 @@
 			You have been logged out. Have a great day!!!
 		</div>
 
-		<form th:action="@{/login}"> method="post">
+		<form th:action="@{/login}" th:method="post">
 			<div class="form-group">
 				<label for="username">Username</label>
-				<input id="username" th:field="*{username}" class="form-control"/>
+				<input id="username" type="text" name="username" class="form-control"/>
 			</div>
 			<div class="form-group">
 				<label for="password">Password</label>
-				<input id="password" type="password" th:field="*{password}" class="form-control"/>
+				<input id="password" type="password" name="password" class="form-control"/>
 			</div>
 
-			<input class="btn btn-primary" type="submit" value="Sign me up!!!"/>
+			<input class="btn btn-primary" type="submit" value="Log In"/>
 		</form>
 	</div>
 </div>
