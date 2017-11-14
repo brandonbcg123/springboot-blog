@@ -84,3 +84,7 @@ input.edit {
     margin-left: 10%;
     color: black;
 }
+
+.btn-info {
+    width: 140%;
+}
