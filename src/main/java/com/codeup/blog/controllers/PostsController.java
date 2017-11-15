@@ -102,8 +102,19 @@ public class PostsController {
         return "redirect:/posts";
     }
 
+    @GetMapping("/posts.json")
+    @ResponseBody
+    public Iterable<Post> viewAllPostsInJSONFormat() {
+        return postSvc.findAllPosts();
+    }
+
+    @GetMapping("/posts/ajax")
+    public String viewAllPostssWithAjax() {
+        return "posts/ajax";
+    }
+}
+
 //    @GetMapping(/"search")
 //    public String searchPost(@RequestParam String keyword) {
 //
 //    }
-}
