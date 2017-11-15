@@ -64,6 +64,14 @@ label {
     color: #000;
 }
 
+#login-invalid-message {
+    color: #ca1111;
+}
+
+#logout-message {
+    color: #1425f1
+}
+
 .show-title {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: bolder;
@@ -83,6 +91,11 @@ label {
     margin-top: 2%;
     margin-bottom: -0.5%;
     color: #000;
+}
+
+.login-logout {
+    text-align: center;
+    font-size: large;
 }
 
 h2>a:hover {
