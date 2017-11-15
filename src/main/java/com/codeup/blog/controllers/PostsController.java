@@ -26,8 +26,8 @@ public class PostsController {
         this.usersDao = usersDao;
     }
 
-    @GetMapping("/posts")
-    public String viewAllAdds(Model viewModel) {
+    @GetMapping({"/posts", "/"})
+    public String viewAllPosts(Model viewModel) {
 
         Iterable<Post> posts = postSvc.findAllPosts();
 

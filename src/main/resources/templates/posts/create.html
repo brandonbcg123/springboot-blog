@@ -5,13 +5,16 @@
 
 <nav th:replace="/fragments/navbar :: nav-bar"></nav>
 
-<h1>Create Post</h1>
+<div class="container">
+	<div class="row">
+		<h1>Create Post</h1>
 
-<form class="form" th:include="/fragments/create-edit :: form-partial"
-th:method="post"
-th:action="@{/posts/create}"
-th:object="${post}" />
-
+		<form class="form" th:include="/fragments/create-edit :: form-partial"
+			  th:method="post"
+			  th:action="@{/posts/create}"
+			  th:object="${post}"/>
+	</div>
+</div>
 
 
 <footer th:replace="/fragments/footer :: main-footer"></footer>

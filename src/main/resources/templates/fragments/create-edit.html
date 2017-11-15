@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
-	<meta charset="UTF-8" />
+	<meta charset="UTF-8"/>
 	<title>Title</title>
 </head>
 <body>
 
 
-<div class="alert alert-danger" role="alert">
-	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-	<span class="sr-only">Error:</span>
-	Enter a valid email address
-</div>
-<form th:fragment="form-partial" >
-	<label for="title">Title:</label>
-		<input th:field="*{title}" name="title" id="title"/>
-	<div
-		class="alert alert-danger"
-		th:if="${#fields.hasErrors('title')}"
-		th:errors="*{title}" >
+<form th:fragment="form-partial">
+	<div class="form-group">
+		<label for="title">Title:</label>
+		<input th:field="*{title}" class="form-control" name="title" id="title"/>
+
+		<div
+				class="alert alert-danger"
+				th:if="${#fields.hasErrors('title')}"
+				th:errors="*{title}">
+		</div>
 	</div>
-		<br/>
+
+	<div class="form-group">
 		<label for="body">Body:</label>
-		<input th:field="*{body}" name="body" id="body"/>
-	<div
-			class="alert alert-danger"
-			th:if="${#fields.hasErrors('body')}"
-			th:errors="*{body}" >
+		<textarea th:field="*{body}" class="form-control"  name="body"
+				  id="body"></textarea>
+
+		<div
+				class="alert alert-danger"
+				th:if="${#fields.hasErrors('body')}"
+				th:errors="*{body}">
+		</div>
 	</div>
-		<br/>
-		<input type="submit"/>
+
+	<input class="btn btn-primary" type="submit" value="submit"/>
 </form>
+
 </body>
 </html>

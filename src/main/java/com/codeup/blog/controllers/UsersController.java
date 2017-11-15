@@ -45,7 +45,7 @@ public class UsersController {
             validation.rejectValue(
                     "username",
                     "user.username",
-                    "Username already taken"
+                    "Username already taken!"
             );
         }
         if (existingEmail != null) {

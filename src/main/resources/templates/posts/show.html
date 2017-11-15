@@ -8,21 +8,37 @@
 	<div class="container">
 		<h1>Post</h1>
 		<div class="post">
-			<h2 th:text="${post.title}"></h2>
-			<h4 th:text="${post.body}"></h4>
-			<h5 th:text="${post.user.email}"></h5>
+			<h2 class="show-title" th:text="${post.title}"></h2>
+			<h4 class="show-body" th:text="${post.body}"></h4>
+			<h5 id="show-username">Username: <span class="show-user-info" th:text="${post.user.username}"></span></h5>
+			<h5 id="show-email">Email: <span class="show-user-info" th:text="${post.user.email}"></span></h5>
 		</div>
 		<div class="btns" id="btn-holder">
+			<div sec:authorize="isAuthenticated()">
+				<div th:if="${#authentication.principal.id == post.user.id}">
+					<div class="row">
+						<div class="col-xs-5">
+							<a th:href="@{/posts/{id}/edit(id=${post.id})}" class="btn btn-info">Edit</a>
+						</div>
 
-			<a th:href="@{/posts/{id}/edit(id=${post.id})}" class="btn btn-info">Edit</a>
-			<form th:action="@{/posts/{id}/delete(id=${post.id})}" method="post">
-				<input class="btn btn-danger" type="submit" value="Delete"/>
-			</form>
+						<div class="col-xs-7" th:if="${#authentication.principal.id == post.user.id}">
+							<div>
+								<form th:action="@{/posts/{id}/delete(id=${post.id})}" method="post">
+									<input class="btn btn-danger" type="submit" value="Delete"/>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-
-<a sec:authorize="isAuthenticated()" th:href="@{/posts/create}" class="btn btn-primary">Create Post</a>
+<div class="row">
+	<div class="col-xs-12">
+		<a sec:authorize="isAuthenticated()" th:href="@{/posts/create}" class="btn btn-primary">Create Post</a>
+	</div>
+</div>
 <div>
 	<footer th:replace="/fragments/footer :: main-footer"></footer>
 </div>
