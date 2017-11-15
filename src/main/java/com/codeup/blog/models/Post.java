@@ -1,5 +1,6 @@
 package com.codeup.blog.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -24,6 +25,7 @@ public class Post {
 
 
     @ManyToOne
+    @JsonManagedReference
     @JoinColumn (name = "user_id")
     //The default value will result in this name for the foreign key;
     //Use the annotation @JoinColumn to specify what the foreign key name you want.
