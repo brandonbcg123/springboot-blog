@@ -102,6 +102,12 @@ public class PostsController {
         return "redirect:/posts";
     }
 
+    @GetMapping("/search")
+    public String searchPost(@RequestParam("searchKeyword") String searchKeyword, Model viewModel) {
+    viewModel.addAttribute("posts", postSvc.searchForPost(searchKeyword));
+    return "posts/index";
+    }
+
     @GetMapping("/posts.json")
     @ResponseBody
     public Iterable<Post> viewAllPostsInJSONFormat() {
@@ -113,8 +119,3 @@ public class PostsController {
         return "posts/ajax";
     }
 }
-
-//    @GetMapping(/"search")
-//    public String searchPost(@RequestParam String keyword) {
-//
-//    }

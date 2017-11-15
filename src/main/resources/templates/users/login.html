@@ -8,12 +8,6 @@
 <div class="container">
 	<div class="row">
 		<h1>Log In</h1>
-		<div th:if="${param.error}">
-			Invalid Username and Password!!!
-		</div>
-		<div th:if="${param.logout}">
-			You have been logged out. Have a great day!!!
-		</div>
 
 		<form th:action="@{/login}" th:method="post">
 			<div class="form-group">
@@ -27,6 +21,12 @@
 
 			<input class="btn btn-primary" type="submit" value="Log In"/>
 		</form>
+		<div id="login-invalid-message" class="login-logout" th:if="${param.error}">
+			Invalid Username or Password!!!
+		</div>
+		<div id="logout-message" class="login-logout" th:if="${param.logout}">
+			You have been logged out. Have a great day!!!
+		</div>
 	</div>
 </div>
 <footer th:replace="/fragments/footer :: main-footer"></footer>

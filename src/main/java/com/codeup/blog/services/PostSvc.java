@@ -35,6 +35,9 @@ public class PostSvc {
         return null;
     }
 
+    public List<Post> searchForPost(String keyword) {
+    return postsDao.search(keyword);
+    }
 
     //createDummyPosts is not being used, but is here for reference when not defining(PostsRepository) an interface that extends CrudRepository
 
