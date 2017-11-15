@@ -49,11 +49,14 @@ label {
 
 #show-username {
     margin-top: 1%;
+    text-align: center;
     color: #000;
+
 }
 
 #show-email {
     margin-top: 0%;
+    text-align: center;
     color: #000;
 }
 
@@ -61,6 +64,7 @@ label {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: bolder;
     text-align: center;
+    color: #000;
 }
 
 .show-body {
@@ -114,14 +118,6 @@ a.createbtn {
     align-items: center;
     margin-bottom: 2%;
 }
-
-/*div.post {*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*align-items: center;*/
-    /*margin-bottom: 2%;*/
-/*}*/
-
 
 div.btns {
     display: inline-flex;
