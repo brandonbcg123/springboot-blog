@@ -8,9 +8,10 @@
 	<div class="container">
 		<h1>Post</h1>
 		<div class="post">
-			<h2 th:text="${post.title}"></h2>
-			<h4 th:text="${post.body}"></h4>
-			<h5 th:text="'Email:' ${post.user.email}"></h5>
+			<h2 class="show-title" th:text="${post.title}"></h2>
+			<h4 class="show-body" th:text="${post.body}"></h4>
+			<h5 id="show-username">Username: <span class="show-user-info" th:text="${post.user.username}"></span></h5>
+			<h5 id="show-email">Email: <span class="show-user-info" th:text="${post.user.email}"></span></h5>
 		</div>
 		<div class="btns" id="btn-holder">
 			<div sec:authorize="isAuthenticated()">

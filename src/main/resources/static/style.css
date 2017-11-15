@@ -1,10 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+body {
+    background-image: url(img/confectionary.png);
+}
+
 h1 {
     color: #000;
-    FONT-WEIGHT: bolder;
+    font-weight: bolder;
     align-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: cursive;
+    text-decoration: underline;
 }
 
 h2 {
@@ -14,6 +23,62 @@ h2 {
 
 form {
     margin-left: 3%;
+}
+
+label {
+    font-size: 2em;
+    margin-top: 5px;
+}
+
+#editbtn {
+    color: #000;
+}
+#btn-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3%;
+    color: #000;
+}
+
+#show-username {
+    margin-top: 1%;
+    color: #000;
+}
+
+#show-email {
+    margin-top: 0%;
+    color: #000;
+}
+
+.show-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.show-body {
+    font-family: 'Merriweather', serif;
+    margin-top: 2.5%;
+    margin-bottom: 2%;
+    text-align: center;
+    color: #2e5a44;
+}
+
+.show-title>a {
+    margin-top: 2%;
+    margin-bottom: -0.5%;
+    color: #000;
+}
+
+h2>a:hover {
+    color: blue;
 }
 
 a.createbtn {
@@ -34,15 +99,9 @@ a.createbtn {
     margin-bottom: 2.5%;
 }
 
-#editbtn {
-    color: #000;
+.show-user-info {
+    font-style: italic;
 }
-#btn-holder {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
 .form {
     display: flex;
     flex-direction: column;
@@ -63,11 +122,6 @@ a.createbtn {
     /*margin-bottom: 2%;*/
 /*}*/
 
-#footer {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
 
 div.btns {
     display: inline-flex;
@@ -87,4 +141,14 @@ input.edit {
 
 .btn-info {
     width: 140%;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+.navbar-default .btn-link {
+    color: #dcc4c4;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #dcc4c4;
 }

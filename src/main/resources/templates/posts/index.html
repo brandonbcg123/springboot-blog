@@ -12,8 +12,8 @@
 
 
 	<div class="post" th:each="post : ${posts}">
-		<h2 th:text="${post.title}"></h2>
-		<h5 th:text="${post.body}"></h5>
+		<h2 id="post-title" class="show-title"><a th:href="${'/posts/' + post.id}" th:text="${post.title}"></a></h2>
+		<h4 class="show-body" th:text="${post.body}"></h4>
 		<div class="btns">
 			<div sec:authorize="isAuthenticated()">
 				<div th:if="${#authentication.principal.id == post.user.id}">
