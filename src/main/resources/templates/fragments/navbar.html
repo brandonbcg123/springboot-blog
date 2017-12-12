@@ -19,7 +19,7 @@
 			</button>
 			<a class="navbar-brand">A Blog For The People</a>
 		</div>
-<!--test-->
+
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
@@ -28,7 +28,7 @@
 					<a href="/login">Log In</a>
 				</li>
 				<li sec:authorize="!isAuthenticated()">
-				<a href="/register">Register</a>
+					<a href="/register">Register</a>
 				</li>
 				<li sec:authorize="isAuthenticated()">
 					<a href="/posts/create">Create Post</a>
