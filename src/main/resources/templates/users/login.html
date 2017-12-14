@@ -1,43 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/fragments/header :: head('Log in')"></head>
+<head th:replace="/fragments/header :: head('Log In')"></head>
 
 <body>
 <nav th:replace="/fragments/navbar :: nav-bar"></nav>
 
 <div class="container">
 	<div class="row">
-		<h1>Log in</h1>
+		<h1>Log In</h1>
 
-		<form th:action="@{/login}" th:method="post" th:object="${user}">
+		<form th:action="@{/login}" th:method="post">
 			<div class="form-group">
 				<label for="username">Username</label>
-				<input id="username" type="text" name="username" class="form-control" />
+				<input id="username" type="text" name="username" class="form-control"/>
 			</div>
-
-
 			<div class="form-group">
 				<label for="password">Password</label>
 				<input id="password" type="password" name="password" class="form-control"/>
 			</div>
 
-			<div class="alert alert-danger" th:if="${param.error}">
-				"Username and password combination is incorrect"
-			</div>
-
-
-			<input class="btn btn-primary" type="submit" value="Login"/>
+			<input class="btn btn-primary" type="submit" value="Log In"/>
 		</form>
-		<!--<div id="login-invalid-message" class="login-logout" th:if="${param.error}">-->
-		<!--Invalid email or password-->
-		<!--</div>-->
-		<!--<div id="logout-message" class="login-logout" th:if="${param.logout}">-->
-		<!--You have been logged out-->
-		<!--</div>-->
+		<div id="login-invalid-message" class="login-logout" th:if="${param.error}">
+			Invalid Username or Password!!!
+		</div>
+		<div id="logout-message" class="login-logout" th:if="${param.logout}">
+			You have been logged out. Have a great day!!!
+		</div>
 	</div>
 </div>
-
-<div th:replace="/fragments/footer :: scripts"></div>
+<footer th:replace="/fragments/footer :: main-footer"></footer>
 
 </body>
 </html>
